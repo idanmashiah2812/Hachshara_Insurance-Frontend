@@ -1,0 +1,12 @@
+<div class="edit-user">
+  <h2>Edit User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

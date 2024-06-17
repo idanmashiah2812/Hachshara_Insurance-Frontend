@@ -1,0 +1,18 @@
+<div class="edit-policy">
+  <h2>Edit Insurance Policy</h2>
+  <form [formGroup]="policyForm" (ngSubmit)="updatePolicy()">
+    <label for="policyNumber">Policy Number</label>
+    <input id="policyNumber" formControlName="policyNumber" type="text" />
+
+    <label for="insuranceAmount">Insurance Amount</label>
+    <input id="insuranceAmount" formControlName="insuranceAmount" type="number" />
+
+    <label for="startDate">Start Date</label>
+    <input id="startDate" formControlName="startDate" type="date" />
+
+    <label for="endDate">End Date</label>
+    <input id="endDate" formControlName="endDate" type="date" />
+
+    <button type="submit">Update Policy</button>
+  </form>
+</div>

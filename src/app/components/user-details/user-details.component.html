@@ -1,0 +1,27 @@
+<header>
+  <h2>User Details</h2>
+</header>
+
+<div class="user-details">
+  <h2>{{ user.name }}</h2>
+  <p>Email: {{ user.email }}</p>
+
+  <div class="filter-form">
+    <form [formGroup]="filterForm" (ngSubmit)="filterPolicies()">
+      <label for="startDate">Filter by Start Date:</label>
+      <input id="startDate" formControlName="startDate" type="date">
+      <button type="submit">Filter</button>
+    </form>
+  </div>
+
+  <button (click)="addPolicy()">Add Policy</button>
+
+  <div *ngFor="let policy of policies">
+    <p>Policy Number: {{ policy.policyNumber }}</p>
+    <p>Insurance Amount: {{ policy.insuranceAmount }}</p>
+    <p>Start Date: {{ policy.startDate }}</p>
+    <p>End Date: {{ policy.endDate }}</p>
+    <button (click)="editPolicy(policy.id)">Edit</button>
+    <button (click)="deletePolicy(policy.id)">Delete</button>
+  </div>
+</div>
